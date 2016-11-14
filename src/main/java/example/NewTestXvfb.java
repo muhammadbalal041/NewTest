@@ -131,12 +131,12 @@ public class NewTestXvfb {
 		//WebDriverWait waitt3 = new WebDriverWait(driver, 10);
 		//waitt3.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='bill_form']/div[2]/div[1]/input"))).sendKeys("sara.iftikharsi@gmail.com");
 
-		driver.findElement(By.xpath("//*[@id='bill_form']/div[2]/div[1]/input")).sendKeys("sara.iftikharsi@gmail.com");
+		driver.findElement(By.xpath("//*[@id='bill_form']/div[2]/div[1]/input")).sendKeys("iftikharsi@gmail.com");
 		System.out.println("Email is Enterd");
 		//WebDriverWait waitt4 = new WebDriverWait(driver, 10);
 		//waitt4.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='billing:confirm_email']"))).sendKeys("sara.iftikharsi@gmail.com");
 
-		driver.findElement(By.xpath("//*[@id='billing:confirm_email']")).sendKeys("sara.iftikharsi@gmail.com");
+		driver.findElement(By.xpath("//*[@id='billing:confirm_email']")).sendKeys("iftikharsi@gmail.com");
 		System.out.println("Email is Confirmed");
 		//WebDriverWait waitt5 = new WebDriverWait(driver, 10);
 		//waitt5.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='billing:street1']"))).sendKeys("test");
@@ -163,7 +163,7 @@ public class NewTestXvfb {
 		//WebDriverWait waitt8 = new WebDriverWait(driver, 10);
 		//waitt8.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='billing:telephone']"))).sendKeys("03364054186");
 
-		driver.findElement(By.xpath("//*[@id='billing:telephone']")).sendKeys("03364054186");
+		driver.findElement(By.xpath("//*[@id='billing:telephone']")).sendKeys("03001234567");
 		System.out.println("Phone number is Enterd");
 
 		//WebDriverWait waitt9 = new WebDriverWait(driver, 100);
@@ -188,7 +188,7 @@ public class NewTestXvfb {
 		if(driver.findElements(By.xpath("//*[@id='tel2']")).size() != 0){
 			System.out.println("Element is Present");
 			WebElement ConfirmMobileNumber = driver.findElement(By.xpath("//*[@id='tel2']"));
- 			ConfirmMobileNumber.sendKeys("03364054186");
+ 			ConfirmMobileNumber.sendKeys("03001234567");
  			System.out.println("Phone number is confirmed");
 			}else{
 			System.out.println("Element is Absent");
