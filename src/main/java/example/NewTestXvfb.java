@@ -166,15 +166,15 @@ public class NewTestXvfb {
 		driver.findElement(By.xpath("//*[@id='billing:telephone']")).sendKeys("03364054186");
 		System.out.println("Phone number is Enterd");
 
-		WebDriverWait waitt9 = new WebDriverWait(driver, 100);
-		waitt9.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='tel2']")));
+		//WebDriverWait waitt9 = new WebDriverWait(driver, 100);
+		//waitt9.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='tel2']")));
 		//.sendKeys("03364054186");
 
 		//driver.findElement(By.xpath("//*[@id='tel2']")).sendKeys("03364054186");
 		if(driver.findElement(By.xpath("//*[@id='tel2']"))!= null){
 			System.out.println("Confirm Phone number is Present");
-			WebDriverWait waitcp = new WebDriverWait(driver, 100);
-			waitcp.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='tel2']")));
+			//WebDriverWait waitcp = new WebDriverWait(driver, 100);
+			//waitcp.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='tel2']")));
 		
 			WebElement ConfirmMobileNumber = driver.findElement(By.xpath(".//*[@id='tel2']"));
 			ConfirmMobileNumber.sendKeys("03364054186");
