@@ -194,11 +194,13 @@ public class NewTestXvfb {
 			System.out.println("Element is Absent");
 			}
 
+		System.out.println("Before cashon Delivery method button");
 		//SELECT CASH ON DELEIVERY
-		//WebDriverWait waitt10 = new WebDriverWait(driver, 10);
-		//waitt10.until(ExpectedConditions.visibilityOfElementLocated(By.id("p_method_cashondelivery"))).click();
-
-		driver.findElement(By.id("p_method_cashondelivery")).click();
+		WebDriverWait waitt10 = new WebDriverWait(driver, 50);
+		waitt10.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='p_method_cashondelivery']"))).click();
+		
+		//driver.findElement(By.id("p_method_cashondelivery")).click();
+		driver.findElement(By.xpath("//*[@id='p_method_cashondelivery']")).click();
 		System.out.println("Cash delivery method is Enterd");
 
 		System.out.println("Before Review Button is reached");
