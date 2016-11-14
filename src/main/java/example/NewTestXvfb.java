@@ -75,9 +75,9 @@ public class NewTestXvfb {
 		
 		//*[@id="product-collection-image-4326"]
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(".//*[@id='product-collection-image-4476']")));
-		driver.findElement(By.xpath(".//*[@id='product-collection-image-4476']")).click();
-		System.out.println("Selected Product .//*[@id='product-collection-image-4476']");
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(".//*[@id='product-collection-image-4438']")));
+		driver.findElement(By.xpath(".//*[@id='product-collection-image-4438']")).click();
+		System.out.println("Selected Product .//*[@id='product-collection-image-4438']");
 		
 //		//SELECT A RANDOM PRODUCT
 //		List<WebElement> allProducts = driver.findElements(By.cssSelector("a.product-image"));
