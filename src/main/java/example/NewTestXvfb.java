@@ -10,29 +10,40 @@ import java.util.logging.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxBinary;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterTest;
 import java.net.MalformedURLException;
-
+import org.openqa.selenium.remote.RemoteWebDriver;
+import java.net.URL;
 public class NewTestXvfb {
 	
 	WebDriver driver;
 	boolean outOfStock = false;
+	public static final String KEY = "1aa8518808db386059c92274ed4466c2";
+	public static final String SECRET = "f1359f37086a31e9d6304f52b27d2e8e";
+	public static final String URL = "http://" + KEY + ":" + SECRET + "@hub.testingbot.com/wd/hub";
 
 	@BeforeTest
 	public void beforeTest() throws MalformedURLException {	
 
-		String Xport = System.getProperty("lmportal.xvfb.id", ":1");
-		System.setProperty("firefox.gecko.driver", "geckodriver");
-		final File firefoxPath = new File(System.getProperty("lmportal.deploy.firefox.path", "/usr/bin/firefox"));
-		FirefoxBinary firefoxBinary = new FirefoxBinary(firefoxPath);
-		firefoxBinary.setEnvironmentProperty("DISPLAY", Xport);
-		driver = new FirefoxDriver(firefoxBinary, null); 
+// 		String Xport = System.getProperty("lmportal.xvfb.id", ":1");
+// 		System.setProperty("firefox.gecko.driver", "geckodriver");
+// 		final File firefoxPath = new File(System.getProperty("lmportal.deploy.firefox.path", "/usr/bin/firefox"));
+// 		FirefoxBinary firefoxBinary = new FirefoxBinary(firefoxPath);
+// 		firefoxBinary.setEnvironmentProperty("DISPLAY", Xport);
+// 		driver = new FirefoxDriver(firefoxBinary, null); 
 
+		DesiredCapabilities caps = new DesiredCapabilities();
+		caps.setCapability("platform", "LINUX");
+		//caps.setCapability("version", "56.0.2906.0 dev (64-bit)");
+		caps.setCapability("browserName", "chrome");
+		driver = new RemoteWebDriver(new URL(URL), caps);
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(30,TimeUnit.SECONDS);
 		//driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS); 
