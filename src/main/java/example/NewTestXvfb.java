@@ -17,6 +17,7 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterTest;
 import java.net.MalformedURLException;
+
 public class NewTestXvfb {
 	
 	WebDriver driver;
@@ -73,9 +74,17 @@ public class NewTestXvfb {
 		WebDriverWait wait = new WebDriverWait(driver, 100);
 		
 		//*[@id="product-collection-image-4326"]
+		
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(".//*[@id='product-collection-image-4476']")));
 		driver.findElement(By.xpath(".//*[@id='product-collection-image-4476']")).click();
 		System.out.println("Selected Product .//*[@id='product-collection-image-4476']");
+		
+//		//SELECT A RANDOM PRODUCT
+//		List<WebElement> allProducts = driver.findElements(By.cssSelector("a.product-image"));
+//		Random random2 = new Random();
+//		WebElement randomProduct = allProducts.get(random2.nextInt(allProducts.size()));
+//		System.out.println("print the selected product "+randomProduct);
+//		randomProduct.click();
 
 		WebDriverWait waitSwatch = new WebDriverWait(driver, 100);
 		waitSwatch.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(".//*[@id='showChart']/span")));
@@ -162,12 +171,18 @@ public class NewTestXvfb {
 		//.sendKeys("03364054186");
 
 		//driver.findElement(By.xpath("//*[@id='tel2']")).sendKeys("03364054186");
-
-		WebElement ConfirmMobileNumber = driver.findElement(By.xpath(".//*[@id='tel2']"));
-
-		ConfirmMobileNumber.sendKeys("03364054186");
-		System.out.println("Phone number is confirmed");
-
+		if(driver.findElement(By.xpath("//*[@id='tel2']"))!= null){
+			System.out.println("Confirm Phone number is Present");
+			WebDriverWait waitcp = new WebDriverWait(driver, 100);
+			waitcp.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='tel2']")));
+		
+			WebElement ConfirmMobileNumber = driver.findElement(By.xpath(".//*[@id='tel2']"));
+			ConfirmMobileNumber.sendKeys("03364054186");
+			System.out.println("Phone number is confirmed");
+		}
+		else{
+			System.out.println("Confirm Phone number is Absent");
+		}
 
 		//SELECT CASH ON DELEIVERY
 		//WebDriverWait waitt10 = new WebDriverWait(driver, 10);
