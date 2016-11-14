@@ -200,7 +200,7 @@ public class NewTestXvfb {
 		waitt10.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='p_method_cashondelivery']"))).click();
 		
 		//driver.findElement(By.id("p_method_cashondelivery")).click();
-		driver.findElement(By.xpath("//*[@id='p_method_cashondelivery']")).click();
+		//driver.findElement(By.xpath("//*[@id='p_method_cashondelivery']")).click();
 		System.out.println("Cash delivery method is Enterd");
 
 		System.out.println("Before Review Button is reached");
