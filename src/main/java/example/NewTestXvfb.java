@@ -185,23 +185,23 @@ public class NewTestXvfb {
 // 			System.out.println("Confirm Phone number is Absent");
 // 		}
 		
-		if(driver.findElements(By.xpath("//*[@id='tel2']")).size() != 0){
-			System.out.println("Element is Present");
-			WebElement ConfirmMobileNumber = driver.findElement(By.xpath("//*[@id='tel2']"));
- 			ConfirmMobileNumber.sendKeys("03001234567");
- 			System.out.println("Phone number is confirmed");
-			}else{
-			System.out.println("Element is Absent");
-			}
+// 		if(driver.findElements(By.xpath("//*[@id='tel2']")).size() != 0){
+// 			System.out.println("Element is Present");
+// 			WebElement ConfirmMobileNumber = driver.findElement(By.xpath("//*[@id='tel2']"));
+//  			ConfirmMobileNumber.sendKeys("03001234567");
+//  			System.out.println("Phone number is confirmed");
+// 			}else{
+// 			System.out.println("Element is Absent");
+// 			}
 
-		System.out.println("Before cashon Delivery method button");
+		//System.out.println("Before cashon Delivery method button");
 		//SELECT CASH ON DELEIVERY
-		WebDriverWait waitt10 = new WebDriverWait(driver, 50);
-		waitt10.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='p_method_cashondelivery']"))).click();
+// 		WebDriverWait waitt10 = new WebDriverWait(driver, 50);
+// 		waitt10.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='p_method_cashondelivery']"))).click();
 		
 		//driver.findElement(By.id("p_method_cashondelivery")).click();
 		//driver.findElement(By.xpath("//*[@id='p_method_cashondelivery']")).click();
-		System.out.println("Cash delivery method is Enterd");
+		//System.out.println("Cash delivery method is Enterd");
 
 		System.out.println("Before Review Button is reached");
 
@@ -211,14 +211,14 @@ public class NewTestXvfb {
 		driver.findElement(By.xpath("//*[@id='review-buttons-container']/button")).click();
 
 		System.out.println("Review Button is clicked");
-		System.out.println("after the Review Button is clicked");
+		//System.out.println("after the Review Button is clicked");
 
 
 		//CLOSE THE BROWSER
-		WebDriverWait waitForOrder = new WebDriverWait(driver, 300);
-		WebElement VerifyCode = waitForOrder.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='test']")));
-		System.out.println("Title of the page is After Reviw Button Clicked " + driver.getTitle());
-		System.out.println("Order is Successfully placed "+VerifyCode);
+// 		WebDriverWait waitForOrder = new WebDriverWait(driver, 300);
+// 		WebElement VerifyCode = waitForOrder.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='test']")));
+// 		System.out.println("Title of the page is After Reviw Button Clicked " + driver.getTitle());
+// 		System.out.println("Order is Successfully placed "+VerifyCode);
 	}
 
 
