@@ -171,18 +171,28 @@ public class NewTestXvfb {
 		//.sendKeys("03364054186");
 
 		//driver.findElement(By.xpath("//*[@id='tel2']")).sendKeys("03364054186");
-		if(driver.findElement(By.xpath("//*[@id='tel2']"))!= null){
-			System.out.println("Confirm Phone number is Present");
-			//WebDriverWait waitcp = new WebDriverWait(driver, 100);
-			//waitcp.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='tel2']")));
 		
-			WebElement ConfirmMobileNumber = driver.findElement(By.xpath(".//*[@id='tel2']"));
-			ConfirmMobileNumber.sendKeys("03364054186");
-			System.out.println("Phone number is confirmed");
-		}
-		else{
-			System.out.println("Confirm Phone number is Absent");
-		}
+//1 		if(driver.findElement(By.xpath("//*[@id='tel2']"))!= null){
+// 			System.out.println("Confirm Phone number is Present");
+// 			//WebDriverWait waitcp = new WebDriverWait(driver, 100);
+// 			//waitcp.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='tel2']")));
+		
+// 			WebElement ConfirmMobileNumber = driver.findElement(By.xpath(".//*[@id='tel2']"));
+// 			ConfirmMobileNumber.sendKeys("03364054186");
+// 			System.out.println("Phone number is confirmed");
+// 		}
+// 		else{
+// 			System.out.println("Confirm Phone number is Absent");
+// 		}
+		
+		if(driver.findElements(By.xpath("//*[@id='tel2']")).size() != 0){
+			System.out.println("Element is Present");
+			WebElement ConfirmMobileNumber = driver.findElement(By.xpath("//*[@id='tel2']"));
+ 			ConfirmMobileNumber.sendKeys("03364054186");
+ 			System.out.println("Phone number is confirmed");
+			}else{
+			System.out.println("Element is Absent");
+			}
 
 		//SELECT CASH ON DELEIVERY
 		//WebDriverWait waitt10 = new WebDriverWait(driver, 10);
